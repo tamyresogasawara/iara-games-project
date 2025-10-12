@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Iara Games - Plataforma dedicada à promoção e venda de jogos desenvolvidos por estúdios indies brasileiros">
+    <meta name="keywords" content="jogos indies brasileiros, games brasil, desenvolvedores independentes, jogos nacionais">
+    <meta name="author" content="Tamyes Ogasawara">
+    <title>Iara Games - Jogos Indies Brasileiros</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link" tabindex="1">Pular para o conteúdo principal</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navegação principal">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html" aria-label="Iara Games - Página inicial" tabindex="2">
+                        <h1>Iara Games</h1>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="index.html" role="menuitem" tabindex="3" aria-current="page">Home</a></li>
+                    <li role="none"><a href="#jogos" role="menuitem" tabindex="4">Jogos</a></li>
+                    <li role="none"><a href="#desenvolvedores" role="menuitem" tabindex="5">Desenvolvedores</a></li>
+                    <li role="none"><a href="#sobre" role="menuitem" tabindex="6">Sobre</a></li>
+                    <li role="none"><a href="pages/cadastro.html" role="menuitem" tabindex="7">Cadastro</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="search-btn" aria-label="Buscar jogos" tabindex="8">
+                        <span class="search-icon" aria-hidden="true">🔍</span>
+                    </button>
+                    <a href="pages/cadastro.html" class="user-btn" aria-label="Criar conta" tabindex="9">
+                        <span class="user-icon" aria-hidden="true">👤</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-container">
+                <h2 id="hero-title" class="hero-title">
+                    Descubra o Melhor dos <span class="highlight">Jogos Indies Brasileiros</span>
+                </h2>
+                <p class="hero-description">
+                    Apoie o cenário nacional de desenvolvimento de jogos com inovação e autenticidade. 
+                    Explore títulos únicos criados por talentosos estúdios independentes do Brasil.
+                </p>
+                <div class="hero-actions">
+                    <button class="cta-primary" tabindex="10" aria-describedby="hero-description">Explorar Jogos</button>
+                    <a href="pages/cadastro.html" class="cta-secondary" tabindex="11">Criar Conta</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Games Section -->
+        <section id="jogos" class="games-section" aria-labelledby="games-title">
+            <div class="section-container">
+                <h2 id="games-title" class="section-title">Jogos em Destaque</h2>
+                <p class="section-description">
+                    Conheça alguns dos melhores jogos desenvolvidos por estúdios indies brasileiros
+                </p>
+                
+                <div class="games-grid" role="grid" aria-label="Lista de jogos disponíveis">
+                    <!-- Game Card 1: Chroma Squad -->
+                    <article class="game-card" role="gridcell" tabindex="12" aria-labelledby="game1-title">
+                        <div class="game-image">
+                            <img src="images/chroma-squad.jpg" 
+                                 alt="Screenshot do jogo Chroma Squad mostrando interface tática com personagens coloridos estilo Power Rangers" 
+                                 loading="lazy"
+                                 width="350"
+                                 height="200">
+                            <div class="game-overlay">
+                                <span class="genre-tag" aria-label="Gênero do jogo">RPG Tático</span>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <h3 id="game1-title" class="game-title">Chroma Squad</h3>
+                            <p class="game-developer" aria-label="Desenvolvedor">Behold Studios</p>
+                            <p class="game-description">
+                                Gerencie seu próprio programa de TV inspirado em Power Rangers neste RPG tático único
+                            </p>
+                            <div class="game-price" aria-label="Preço do jogo">
+                                <span class="price">R$ 29,99</span>
+                            </div>
+                            <div class="game-actions">
+                                <button class="btn-primary" aria-label="Ver mais detalhes sobre Chroma Squad" tabindex="13">
+                                    Ver Mais
+                                </button>
+                                <button class="btn-secondary" aria-label="Comprar Chroma Squad por R$ 29,99" tabindex="14">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Game Card 2: Dandara -->
+                    <article class="game-card" role="gridcell" tabindex="15" aria-labelledby="game2-title">
+                        <div class="game-image">
+                            <img src="images/dandara.png" 
+                                 alt="Arte conceitual do jogo Dandara mostrando personagem principal em ambiente místico inspirado na cultura brasileira" 
+                                 loading="lazy"
+                                 width="350"
+                                 height="200">
+                            <div class="game-overlay">
+                                <span class="genre-tag" aria-label="Gênero do jogo">Metroidvania</span>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <h3 id="game2-title" class="game-title">Dandara</h3>
+                            <p class="game-developer" aria-label="Desenvolvedor">Long Hat House</p>
+                            <p class="game-description">
+                                Jogo de exploração único com movimento inovador, inspirado na cultura brasileira
+                            </p>
+                            <div class="game-price" aria-label="Preço do jogo">
+                                <span class="price">R$ 39,99</span>
+                            </div>
+                            <div class="game-actions">
+                                <button class="btn-primary" aria-label="Ver mais detalhes sobre Dandara" tabindex="16">
+                                    Ver Mais
+                                </button>
+                                <button class="btn-secondary" aria-label="Comprar Dandara por R$ 39,99" tabindex="17">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Game Card 3: Blazing Chrome -->
+                    <article class="game-card" role="gridcell" tabindex="18" aria-labelledby="game3-title">
+                        <div class="game-image">
+                            <img src="images/blazing-chrome.png" 
+                                 alt="Arte promocional do jogo Blazing Chrome com personagens em estilo retrô futurista inspirado em Contra" 
+                                 loading="lazy"
+                                 width="350"
+                                 height="200">
+                            <div class="game-overlay">
+                                <span class="genre-tag" aria-label="Gênero do jogo">Run & Gun</span>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <h3 id="game3-title" class="game-title">Blazing Chrome</h3>
+                            <p class="game-developer" aria-label="Desenvolvedor">JoyMasher</p>
+                            <p class="game-description">
+                                Ação frenética inspirada nos clássicos de 16-bit como Contra e Metal Slug
+                            </p>
+                            <div class="game-price" aria-label="Preço do jogo">
+                                <span class="price">R$ 24,99</span>
+                            </div>
+                            <div class="game-actions">
+                                <button class="btn-primary" aria-label="Ver mais detalhes sobre Blazing Chrome" tabindex="19">
+                                    Ver Mais
+                                </button>
+                                <button class="btn-secondary" aria-label="Comprar Blazing Chrome por R$ 24,99" tabindex="20">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Game Card 4: Horizon Chase Turbo -->
+                    <article class="game-card" role="gridcell" tabindex="21" aria-labelledby="game4-title">
+                        <div class="game-image">
+                            <img src="images/horizon-chase.jpg" 
+                                 alt="Screenshot do jogo Horizon Chase Turbo mostrando corrida em pista colorida com visual retrô dos anos 80" 
+                                 loading="lazy"
+                                 width="350"
+                                 height="200">
+                            <div class="game-overlay">
+                                <span class="genre-tag" aria-label="Gênero do jogo">Corrida</span>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <h3 id="game4-title" class="game-title">Horizon Chase Turbo</h3>
+                            <p class="game-developer" aria-label="Desenvolvedor">Aquiris Game Studio</p>
+                            <p class="game-description">
+                                Corrida arcade retrô com visual vibrante e trilha sonora inesquecível
+                            </p>
+                            <div class="game-price" aria-label="Preço do jogo">
+                                <span class="price">R$ 19,99</span>
+                            </div>
+                            <div class="game-actions">
+                                <button class="btn-primary" aria-label="Ver mais detalhes sobre Horizon Chase Turbo" tabindex="22">
+                                    Ver Mais
+                                </button>
+                                <button class="btn-secondary" aria-label="Comprar Horizon Chase Turbo por R$ 19,99" tabindex="23">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Game Card 5: Kaze and the Wild Masks -->
+                    <article class="game-card" role="gridcell" tabindex="24" aria-labelledby="game5-title">
+                        <div class="game-image">
+                            <img src="images/kaze-wild-masks.jpg" 
+                                 alt="Arte do jogo Kaze and the Wild Masks com personagem coelho em plataforma colorida estilo anos 90" 
+                                 loading="lazy"
+                                 width="350"
+                                 height="200">
+                            <div class="game-overlay">
+                                <span class="genre-tag" aria-label="Gênero do jogo">Plataforma</span>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <h3 id="game5-title" class="game-title">Kaze and the Wild Masks</h3>
+                            <p class="game-developer" aria-label="Desenvolvedor">PixelHive</p>
+                            <p class="game-description">
+                                Aventura de plataforma inspirada nos clássicos dos anos 90 com visual deslumbrante
+                            </p>
+                            <div class="game-price" aria-label="Preço do jogo">
+                                <span class="price">R$ 34,99</span>
+                            </div>
+                            <div class="game-actions">
+                                <button class="btn-primary" aria-label="Ver mais detalhes sobre Kaze and the Wild Masks" tabindex="25">
+                                    Ver Mais
+                                </button>
+                                <button class="btn-secondary" aria-label="Comprar Kaze and the Wild Masks por R$ 34,99" tabindex="26">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Game Card 6: Dodgeball Academia -->
+                    <article class="game-card" role="gridcell" tabindex="27" aria-labelledby="game6-title">
+                        <div class="game-image">
+                            <img src="images/dodgeball-academia.jpg" 
+                                 alt="Screenshot do jogo Dodgeball Academia mostrando partida de queimada em escola com personagens anime" 
+                                 loading="lazy"
+                                 width="350"
+                                 height="200">
+                            <div class="game-overlay">
+                                <span class="genre-tag" aria-label="Gênero do jogo">RPG Esportivo</span>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <h3 id="game6-title" class="game-title">Dodgeball Academia</h3>
+                            <p class="game-developer" aria-label="Desenvolvedor">Pocket Trap</p>
+                            <p class="game-description">
+                                RPG único que combina queimada com elementos de escola e desenvolvimento de personagem
+                            </p>
+                            <div class="game-price" aria-label="Preço do jogo">
+                                <span class="price">R$ 27,99</span>
+                            </div>
+                            <div class="game-actions">
+                                <button class="btn-primary" aria-label="Ver mais detalhes sobre Dodgeball Academia" tabindex="28">
+                                    Ver Mais
+                                </button>
+                                <button class="btn-secondary" aria-label="Comprar Dodgeball Academia por R$ 27,99" tabindex="29">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre" class="about-section" aria-labelledby="about-title">
+            <div class="section-container">
+                <h2 id="about-title" class="section-title">Sobre a Iara Games</h2>
+                <div class="about-content">
+                    <p>
+                        A Iara Games é uma plataforma dedicada exclusivamente à promoção e venda de jogos 
+                        desenvolvidos por estúdios indies brasileiros. Nossa missão é apoiar o cenário 
+                        nacional de desenvolvimento de jogos com inovação e autenticidade.
+                    </p>
+                    <p>
+                        Acreditamos no talento dos desenvolvedores brasileiros e queremos conectar 
+                        esses criadores incríveis com jogadores que valorizam experiências únicas 
+                        e culturalmente ricas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developers Section -->
+        <section id="desenvolvedores" class="developers-section" aria-labelledby="developers-title">
+            <div class="section-container">
+                <h2 id="developers-title" class="section-title">Para Desenvolvedores</h2>
+                <div class="developers-content">
+                    <p>
+                        Você é um desenvolvedor indie brasileiro? Junte-se à nossa plataforma e 
+                        alcance milhares de jogadores que valorizam criatividade e inovação.
+                    </p>
+                    <div class="developer-benefits">
+                        <div class="benefit-item">
+                            <h3>Visibilidade Nacional</h3>
+                            <p>Destaque seus jogos para toda a comunidade gamer brasileira</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h3>Suporte Técnico</h3>
+                            <p>Ajuda especializada para publicação e marketing dos seus jogos</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h3>Comunidade Ativa</h3>
+                            <p>Conecte-se com outros desenvolvedores e compartilhe experiências</p>
+                        </div>
+                    </div>
+                    <div class="developer-cta">
+                        <a href="pages/cadastro.html" class="cta-primary">Cadastre seu Estúdio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Iara Games</h3>
+                <p>Apoiando o desenvolvimento de jogos brasileiros</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="#desenvolvedores" tabindex="30">Desenvolvedores</a></li>
+                    <li><a href="pages/cadastro.html" tabindex="31">Cadastro</a></li>
+                    <li><a href="#" tabindex="32">Política de Privacidade</a></li>
+                    <li><a href="#" tabindex="33">Termos de Uso</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Comunidade</h4>
+                <ul>
+                    <li><a href="#" tabindex="34" aria-label="Discord da Iara Games">Discord</a></li>
+                    <li><a href="#" tabindex="35" aria-label="Twitter da Iara Games">Twitter</a></li>
+                    <li><a href="#" tabindex="36" aria-label="Instagram da Iara Games">Instagram</a></li>
+                    <li><a href="#" tabindex="37" aria-label="YouTube da Iara Games">YouTube</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <p>
+                    <a href="mailto:contato@iaragames.com.br" aria-label="Enviar email para contato@iaragames.com.br">
+                        contato@iaragames.com.br
+                    </a>
+                </p>
+                <p>
+                    <a href="tel:+5511999999999" aria-label="Ligar para +55 11 9999-9999">
+                        +55 (11) 9999-9999
+                    </a>
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Iara Games. Todos os direitos reservados.</p>
+            <p>Desenvolvido por: Tamyes Ogasawara</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
