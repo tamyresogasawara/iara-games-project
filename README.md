@@ -20,5 +20,5 @@ Para visualizar o projeto, basta abrir o arquivo `index.html` em seu navegador d
 
 ## Link para a Versão Online
 
-[Em breve]
+(https://tamyresogasawara.github.io/iara-games-project/index.html)
 
