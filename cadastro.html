@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cadastro de usuário na Iara Games - Crie sua conta para descobrir os melhores jogos indies brasileiros">
+    <meta name="keywords" content="cadastro, registro, conta, iara games, jogos indies brasileiros">
+    <meta name="author" content="Tamyes Ogasawara">
+    <title>Cadastro de Usuário - Iara Games</title>
+    <link rel="icon" type="image/png" href="../images/iara%20fav%20icon.png">
+    <link rel="shortcut icon" type="image/png" href="../images/iara%20fav%20icon.png">
+    <link rel="apple-touch-icon" href="../images/iara%20fav%20icon.png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/form-styles.css">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link" tabindex="1">Pular para o conteúdo principal</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navegação principal">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="../index.html" aria-label="Iara Games - Voltar à página inicial" tabindex="2">
+                        <img src="../images/logo%20iara%20games.png" alt="Iara Games" class="logo-image">
+                    </a>
+                </div>
+                
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="../index.html" role="menuitem" tabindex="3">Home</a></li>
+                    <li role="none"><a href="../index.html#jogos" role="menuitem" tabindex="4">Jogos</a></li>
+                    <li role="none"><a href="../index.html#desenvolvedores" role="menuitem" tabindex="5">Desenvolvedores</a></li>
+                    <li role="none"><a href="sobre.html" role="menuitem" tabindex="6">Sobre</a></li>
+                    <li role="none"><a href="cadastro.html" role="menuitem" tabindex="7" aria-current="page">Cadastro</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="search-btn" aria-label="Buscar jogos" tabindex="8">
+                        <span class="search-icon" aria-hidden="true">🔍</span>
+                    </button>
+                    <a href="cadastro.html" class="user-btn" aria-label="Página de cadastro atual" tabindex="9">
+                        <span class="user-icon" aria-hidden="true">👤</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Registration Section -->
+        <section class="registration-section" aria-labelledby="registration-title">
+            <div class="registration-container">
+                <!-- Form Header -->
+                <div class="form-header">
+                    <h2 id="registration-title" class="form-title">
+                        Junte-se à <span class="highlight">Iara Games</span>
+                    </h2>
+                    <p class="form-subtitle">
+                        Crie sua conta e descubra os melhores jogos indies brasileiros. 
+                        Apoie desenvolvedores nacionais e tenha acesso a experiências únicas.
+                    </p>
+                </div>
+
+                <!-- Registration Form -->
+                <form id="registration-form" 
+                      name="cadastro" 
+                      method="post" 
+                      action="#" 
+                      class="registration-form" 
+                      novalidate
+                      aria-labelledby="registration-title">
+                    
+                    <!-- Personal Information Fieldset -->
+                    <fieldset class="form-fieldset">
+                        <legend class="fieldset-legend">Informações Pessoais</legend>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nome" class="form-label">
+                                    Nome Completo
+                                    <span class="required-indicator" aria-label="Campo obrigatório">*</span>
+                                </label>
+                                <input type="text" 
+                                       id="nome" 
+                                       name="nome" 
+                                       class="form-control"
+                                       required 
+                                       minlength="2" 
+                                       maxlength="100"
+                                       placeholder="Ex: João Silva Santos"
+                                       aria-describedby="nome-help"
+                                       autocomplete="name"
+                                       tabindex="10">
+                                <div id="nome-help" class="form-help">
+                                    Digite seu nome completo como aparece em seus documentos
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="data-nascimento" class="form-label">
+                                    Data de Nascimento
+                                    <span class="required-indicator" aria-label="Campo obrigatório">*</span>
+                                </label>
+                                <input type="date" 
+                                       id="data-nascimento" 
+                                       name="data-nascimento" 
+                                       class="form-control"
+                                       required
+                                       aria-describedby="data-help"
+                                       autocomplete="bday"
+                                       tabindex="11">
+                                <div id="data-help" class="form-help">
+                                    Você deve ter pelo menos 13 anos para criar uma conta
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">
+                                Email
+                                <span class="required-indicator" aria-label="Campo obrigatório">*</span>
+                            </label>
+                            <input type="email" 
+                                   id="email" 
+                                   name="email" 
+                                   class="form-control"
+                                   required
+                                   maxlength="255"
+                                   placeholder="Ex: joao.silva@email.com"
+                                   aria-describedby="email-help"
+                                   autocomplete="email"
+                                   tabindex="12">
+                            <div id="email-help" class="form-help">
+                                Usaremos este email para comunicações importantes e recuperação de senha
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefone" class="form-label">
+                                Telefone
+                                <span class="optional-indicator">(opcional)</span>
+                            </label>
+                            <input type="tel" 
+                                   id="telefone" 
+                                   name="telefone" 
+                                   class="form-control"
+                                   maxlength="20"
+                                   placeholder="Ex: (11) 99999-9999"
+                                   aria-describedby="telefone-help"
+                                   autocomplete="tel"
+                                   tabindex="13">
+                            <div id="telefone-help" class="form-help">
+                                Opcional: para notificações sobre lançamentos e promoções
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Account Information Fieldset -->
+                    <fieldset class="form-fieldset">
+                        <legend class="fieldset-legend">Informações da Conta</legend>
+                        
+                        <div class="form-group">
+                            <label for="usuario" class="form-label">
+                                Nome de Usuário
+                                <span class="required-indicator" aria-label="Campo obrigatório">*</span>
+                            </label>
+                            <input type="text" 
+                                   id="usuario" 
+                                   name="usuario" 
+                                   class="form-control"
+                                   required 
+                                   minlength="3" 
+                                   maxlength="30"
+                                   placeholder="Ex: joaosilva123"
+                                   aria-describedby="usuario-help"
+                                   autocomplete="username"
+                                   pattern="^[a-zA-Z0-9_]+$"
+                                   tabindex="14">
+                            <div id="usuario-help" class="form-help">
+                                Apenas letras, números e underscore. Mínimo 3 caracteres
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="senha" class="form-label">
+                                    Senha
+                                    <span class="required-indicator" aria-label="Campo obrigatório">*</span>
+                                </label>
+                                <div class="password-input-container">
+                                    <input type="password" 
+                                           id="senha" 
+                                           name="senha" 
+                                           class="form-control"
+                                           required 
+                                           minlength="8" 
+                                           maxlength="128"
+                                           placeholder="Digite uma senha segura"
+                                           aria-describedby="senha-help"
+                                           autocomplete="new-password"
+                                           tabindex="15">
+                                    <button type="button" 
+                                            class="password-toggle" 
+                                            aria-label="Mostrar/ocultar senha"
+                                            tabindex="16">
+                                        <span aria-hidden="true">👁️</span>
+                                    </button>
+                                </div>
+                                <div id="senha-help" class="form-help">
+                                    Mínimo 8 caracteres. Use letras, números e símbolos para maior segurança
+                                </div>
+                                <div class="password-strength" aria-live="polite" aria-atomic="true">
+                                    <div class="strength-meter">
+                                        <div class="strength-bar" id="strength-bar"></div>
+                                    </div>
+                                    <span class="strength-text" id="strength-text">Digite uma senha</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirmar-senha" class="form-label">
+                                    Confirmar Senha
+                                    <span class="required-indicator" aria-label="Campo obrigatório">*</span>
+                                </label>
+                                <input type="password" 
+                                       id="confirmar-senha" 
+                                       name="confirmar-senha" 
+                                       class="form-control"
+                                       required
+                                       placeholder="Digite a senha novamente"
+                                       aria-describedby="confirmar-senha-help"
+                                       autocomplete="new-password"
+                                       tabindex="17">
+                                <div id="confirmar-senha-help" class="form-help">
+                                    Repita a senha para confirmação
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Preferences Fieldset -->
+                    <fieldset class="form-fieldset">
+                        <legend class="fieldset-legend">Preferências</legend>
+                        
+                        <div class="form-group">
+                            <label for="generos-favoritos" class="form-label">
+                                Gêneros de Jogos Favoritos
+                                <span class="optional-indicator">(opcional)</span>
+                            </label>
+                            <select id="generos-favoritos" 
+                                    name="generos-favoritos" 
+                                    class="form-control"
+                                    multiple
+                                    aria-describedby="generos-help"
+                                    tabindex="18">
+                                <option value="acao">Ação</option>
+                                <option value="aventura">Aventura</option>
+                                <option value="rpg">RPG</option>
+                                <option value="estrategia">Estratégia</option>
+                                <option value="puzzle">Puzzle</option>
+                                <option value="plataforma">Plataforma</option>
+                                <option value="corrida">Corrida</option>
+                                <option value="simulacao">Simulação</option>
+                                <option value="indie">Indie</option>
+                                <option value="casual">Casual</option>
+                            </select>
+                            <div id="generos-help" class="form-help">
+                                Segure Ctrl (ou Cmd no Mac) para selecionar múltiplos gêneros
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <fieldset class="checkbox-fieldset">
+                                <legend class="checkbox-legend">Tipo de Conta</legend>
+                                <div class="radio-group" role="radiogroup" aria-labelledby="tipo-conta-legend">
+                                    <div class="radio-item">
+                                        <input type="radio" 
+                                               id="jogador" 
+                                               name="tipo-conta" 
+                                               value="jogador" 
+                                               class="radio-input"
+                                               checked
+                                               tabindex="19">
+                                        <label for="jogador" class="radio-label">
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">
+                                                <strong>Jogador</strong>
+                                                <span class="radio-description">Quero descobrir e comprar jogos</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="radio-item">
+                                        <input type="radio" 
+                                               id="desenvolvedor" 
+                                               name="tipo-conta" 
+                                               value="desenvolvedor" 
+                                               class="radio-input"
+                                               tabindex="20">
+                                        <label for="desenvolvedor" class="radio-label">
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">
+                                                <strong>Desenvolvedor</strong>
+                                                <span class="radio-description">Quero publicar meus jogos na plataforma</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="form-group">
+                            <fieldset class="checkbox-fieldset">
+                                <legend class="checkbox-legend">Notificações e Comunicações</legend>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" 
+                                               id="newsletter" 
+                                               name="newsletter" 
+                                               value="sim" 
+                                               class="checkbox-input"
+                                               checked
+                                               tabindex="21">
+                                        <label for="newsletter" class="checkbox-label">
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">
+                                                Receber newsletter com novidades e lançamentos
+                                            </span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" 
+                                               id="promocoes" 
+                                               name="promocoes" 
+                                               value="sim" 
+                                               class="checkbox-input"
+                                               tabindex="22">
+                                        <label for="promocoes" class="checkbox-label">
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">
+                                                Receber notificações sobre promoções e descontos
+                                            </span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" 
+                                               id="sms" 
+                                               name="sms" 
+                                               value="sim" 
+                                               class="checkbox-input"
+                                               tabindex="23">
+                                        <label for="sms" class="checkbox-label">
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">
+                                                Receber SMS sobre lançamentos importantes
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </fieldset>
+
+                    <!-- Terms and Privacy Fieldset -->
+                    <fieldset class="form-fieldset">
+                        <legend class="fieldset-legend">Termos e Privacidade</legend>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <div class="checkbox-item required-checkbox">
+                                    <input type="checkbox" 
+                                           id="termos" 
+                                           name="termos" 
+                                           value="aceito" 
+                                           class="checkbox-input"
+                                           required
+                                           aria-describedby="termos-help"
+                                           tabindex="24">
+                                    <label for="termos" class="checkbox-label">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">
+                                            Li e aceito os 
+                                            <a href="#" target="_blank" rel="noopener" aria-label="Termos de Uso (abre em nova aba)">
+                                                Termos de Uso
+                                            </a>
+                                            <span class="required-indicator" aria-label="Campo obrigatório">*</span>
+                                        </span>
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox-item required-checkbox">
+                                    <input type="checkbox" 
+                                           id="privacidade" 
+                                           name="privacidade" 
+                                           value="aceito" 
+                                           class="checkbox-input"
+                                           required
+                                           aria-describedby="privacidade-help"
+                                           tabindex="25">
+                                    <label for="privacidade" class="checkbox-label">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">
+                                            Li e aceito a 
+                                            <a href="#" target="_blank" rel="noopener" aria-label="Política de Privacidade (abre em nova aba)">
+                                                Política de Privacidade
+                                            </a>
+                                            <span class="required-indicator" aria-label="Campo obrigatório">*</span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="termos-help" class="form-help">
+                                É necessário aceitar os termos para criar sua conta
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="submit" 
+                                class="btn-submit" 
+                                aria-describedby="submit-help"
+                                tabindex="26">
+                            <span class="btn-text">Criar Minha Conta</span>
+                            <span class="btn-icon" aria-hidden="true">🚀</span>
+                        </button>
+                        
+                        <button type="reset" 
+                                class="btn-reset" 
+                                aria-label="Limpar todos os campos do formulário"
+                                tabindex="27">
+                            <span class="btn-text">Limpar Formulário</span>
+                            <span class="btn-icon" aria-hidden="true">🔄</span>
+                        </button>
+                        
+                        <div id="submit-help" class="form-help">
+                            Ao criar sua conta, você terá acesso imediato à plataforma
+                        </div>
+                    </div>
+
+                    <!-- Form Footer -->
+                    <div class="form-footer">
+                        <p>
+                            Já tem uma conta? 
+                            <a href="#" class="login-link" tabindex="28">
+                                Faça login aqui
+                            </a>
+                        </p>
+                    </div>
+                </form>
+
+                <!-- Success Message (Hidden by default) -->
+                <div id="success-message" class="success-message" role="alert" aria-live="assertive" style="display: none;">
+                    <div class="success-content">
+                        <div class="success-icon" aria-hidden="true">✅</div>
+                        <h3>Conta criada com sucesso!</h3>
+                        <p>Bem-vindo à Iara Games! Verifique seu email para ativar sua conta.</p>
+                        <a href="../index.html" class="btn-primary">Ir para a página inicial</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Iara Games</h3>
+                <p>Apoiando o desenvolvimento de jogos brasileiros</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="../index.html#desenvolvedores">Desenvolvedores</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Comunidade</h4>
+                <ul>
+                    <li><a href="#" aria-label="Discord da Iara Games">Discord</a></li>
+                    <li><a href="#" aria-label="Twitter da Iara Games">Twitter</a></li>
+                    <li><a href="#" aria-label="Instagram da Iara Games">Instagram</a></li>
+                    <li><a href="#" aria-label="YouTube da Iara Games">YouTube</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <p>
+                    <a href="mailto:contato@iaragames.com.br" aria-label="Enviar email para contato@iaragames.com.br">
+                        contato@iaragames.com.br
+                    </a>
+                </p>
+                <p>
+                    <a href="tel:+5511999999999" aria-label="Ligar para +55 11 9999-9999">
+                        +55 (11) 9999-9999
+                    </a>
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Iara Games. Todos os direitos reservados.</p>
+            <p>Desenvolvido por: Tamyes Ogasawara</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/form-validation.js"></script>
+</body>
+</html>
+
