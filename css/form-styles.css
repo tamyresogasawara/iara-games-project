@@ -112,42 +112,7 @@
 }
 
 /* Form Controls */
-.form-control {
-    width: 100%;
-    padding: var(--spacing-sm) var(--spacing-md);
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-primary);
-    font-size: var(--font-size-base);
-    font-family: var(--font-family);
-    transition: all var(--transition-normal);
-    backdrop-filter: blur(5px);
-}
-
-.form-control:focus {
-    outline: none;
-    border-color: var(--accent-blue);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.form-control:hover {
-    border-color: rgba(99, 102, 241, 0.4);
-}
-
-.form-control::placeholder {
-    color: var(--text-muted);
-    opacity: 0.8;
-}
-
-.form-control:invalid {
-    border-color: #ef4444;
-}
-
-.form-control:valid {
-    border-color: var(--accent-green);
-}
+/* Form controls: rely on Bootstrap's .form-control for base styling; custom helpers remain scoped elsewhere */
 
 /* Select Styling */
 select.form-control {
@@ -576,7 +541,7 @@ select.form-control option {
     opacity: 0.9;
 }
 
-.success-message .btn-primary {
+.success-message .cta-primary {
     background: white;
     color: var(--accent-green);
     padding: var(--spacing-sm) var(--spacing-lg);
@@ -587,7 +552,7 @@ select.form-control option {
     transition: all var(--transition-normal);
 }
 
-.success-message .btn-primary:hover {
+.success-message .cta-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }

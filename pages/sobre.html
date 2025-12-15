@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" href="../images/iara%20fav%20icon.png">
     <link rel="shortcut icon" type="image/png" href="../images/iara%20fav%20icon.png">
     <link rel="apple-touch-icon" href="../images/iara%20fav%20icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -18,29 +19,28 @@
     
     <!-- Header -->
     <header class="header" role="banner">
-        <nav class="navbar" role="navigation" aria-label="Navegação principal">
-            <div class="nav-container">
-                <div class="logo">
-                    <a href="../index.html" aria-label="Iara Games - Voltar à página inicial" tabindex="2">
-                        <img src="../images/logo%20iara%20games.png" alt="Iara Games" class="logo-image">
-                    </a>
-                </div>
-                
-                <ul class="nav-menu" role="menubar">
-                    <li role="none"><a href="../index.html" role="menuitem" tabindex="3">Home</a></li>
-                    <li role="none"><a href="../index.html#jogos" role="menuitem" tabindex="4">Jogos</a></li>
-                    <li role="none"><a href="../index.html#desenvolvedores" role="menuitem" tabindex="5">Desenvolvedores</a></li>
-                    <li role="none"><a href="sobre.html" role="menuitem" tabindex="6" aria-current="page">Sobre</a></li>
-                    <li role="none"><a href="cadastro.html" role="menuitem" tabindex="7">Cadastro</a></li>
-                </ul>
-                
-                <div class="nav-actions">
-                    <button class="search-btn" aria-label="Buscar jogos" tabindex="8">
-                        <span class="search-icon" aria-hidden="true">🔍</span>
-                    </button>
-                    <a href="cadastro.html" class="user-btn" aria-label="Criar conta" tabindex="9">
-                        <span class="user-icon" aria-hidden="true">👤</span>
-                    </a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" aria-label="Navegação principal">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html" aria-label="Iara Games - Voltar à página inicial" tabindex="2">
+                    <img src="../images/logo%20iara%20games.png" alt="Iara Games" class="logo-image d-inline-block align-top" style="height:40px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0" role="menubar">
+                        <li class="nav-item" role="none"><a class="nav-link" href="../index.html" role="menuitem" tabindex="3">Home</a></li>
+                        <li class="nav-item" role="none"><a class="nav-link" href="../index.html#jogos" role="menuitem" tabindex="4">Jogos</a></li>
+                        <li class="nav-item" role="none"><a class="nav-link" href="../index.html#desenvolvedores" role="menuitem" tabindex="5">Desenvolvedores</a></li>
+                        <li class="nav-item" role="none"><a class="nav-link active" href="sobre.html" role="menuitem" tabindex="6" aria-current="page">Sobre</a></li>
+                        <li class="nav-item" role="none"><a class="nav-link" href="cadastro.html" role="menuitem" tabindex="7">Cadastro</a></li>
+                    </ul>
+
+                    <div class="d-flex ms-3">
+                        <button class="btn btn-outline-secondary me-2" aria-label="Buscar jogos" tabindex="8">🔍</button>
+                        <a href="cadastro.html" class="btn btn-outline-primary" aria-label="Criar conta" tabindex="9">👤</a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -50,13 +50,9 @@
     <main id="main-content" role="main">
         <!-- Hero Section -->
         <section class="hero" aria-labelledby="about-hero-title">
-            <div class="hero-container">
-                <h1 id="about-hero-title" class="hero-title">
-                    Sobre a <span class="highlight">Iara Games</span>
-                </h1>
-                <p class="hero-description">
-                    Damos visibilidade aos jogos indies brasileiros.
-                </p>
+            <div class="container py-5 hero-container">
+                <h1 id="about-hero-title" class="hero-title display-5 fw-bold">Sobre a <span class="highlight">Iara Games</span></h1>
+                <p class="hero-description lead">Damos visibilidade aos jogos indies brasileiros.</p>
             </div>
         </section>
 
@@ -117,7 +113,7 @@
                 </div>
 
                 <div class="developer-cta">
-                    <a href="../index.html#jogos" class="cta-primary">Explorar Jogos</a>
+                    <a href="../index.html#jogos" class="cta-primary btn btn-primary">Explorar Jogos</a>
                 </div>
             </div>
         </section>
@@ -156,7 +152,7 @@
                 </div>
 
                 <div class="developer-cta">
-                    <a href="cadastro.html" class="cta-primary">Enviar meu jogo</a>
+                    <a href="cadastro.html" class="cta-primary btn btn-primary">Enviar meu jogo</a>
                 </div>
             </div>
         </section>
@@ -239,6 +235,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

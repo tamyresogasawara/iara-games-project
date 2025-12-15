@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Relatório: Interatividade — Iara Games</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;color:#222;margin:24px;line-height:1.45}
+    h1,h2{color:#1f2937}
+    pre{background:#f5f7fb;padding:12px;border-radius:6px;overflow:auto}
+    .screenshot{border:1px solid #ddd;padding:8px;margin:8px 0;width:100%;max-width:900px}
+    .meta{font-size:0.95rem;color:#374151}
+    .note{background:#fff7ed;border-left:4px solid #f59e0b;padding:10px;border-radius:4px}
+    .center{display:flex;gap:12px;flex-direction:column;align-items:flex-start}
+  </style>
+</head>
+<body>
+  <h1>Relatório: Interatividade — Iara Games</h1>
+  <p class="meta">Página escolhida: <strong>Cadastro de Usuário</strong> — <code>pages/cadastro.html</code></p>
+
+  <h2>1. Objetivo da entrega</h2>
+  <p>Documentar as interações JavaScript já implementadas no projeto e fornecer um artefato pronto para exportação em PDF. O layout respeita a identidade visual e utiliza Bootstrap como plano de fundo; o foco do relatório são as funcionalidades interativas desenvolvidas em JavaScript.</p>
+
+  <h2>2. Capturas de tela (coloque seus screenshots aqui)</h2>
+  <p>Para gerar o PDF final com evidências visuais, adicione imagens em <code>images/screenshots/</code> com os nomes abaixo. O relatório tentará carregá-las automaticamente e, caso não existam, mostrará um placeholder SVG.</p>
+  <div class="center">
+    <figure>
+      <figcaption><strong>Full page</strong> — cadastro-full.png</figcaption>
+      <img src="images/screenshots/cadastro-full.png" alt="Cadastro - página completa" class="screenshot" data-filename="cadastro-full.png">
+    </figure>
+
+    <figure>
+      <figcaption><strong>Validação de campo</strong> — cadastro-error.png</figcaption>
+      <img src="images/screenshots/cadastro-error.png" alt="Cadastro - erro de validação" class="screenshot" data-filename="cadastro-error.png">
+    </figure>
+
+    <figure>
+      <figcaption><strong>Força da senha</strong> — cadastro-password.png</figcaption>
+      <img src="images/screenshots/cadastro-password.png" alt="Cadastro - força da senha" class="screenshot" data-filename="cadastro-password.png">
+    </figure>
+
+    <figure>
+      <figcaption><strong>Sucesso</strong> — cadastro-success.png</figcaption>
+      <img src="images/screenshots/cadastro-success.png" alt="Cadastro - sucesso" class="screenshot" data-filename="cadastro-success.png">
+    </figure>
+  </div>
+  <div class="note">Se quiser, eu posso inserir as imagens no relatório — adicione-as em <code>images/screenshots/</code> e eu as incorporo automaticamente.</div>
+
+  <h2>3. Interações aplicadas</h2>
+  <ul>
+    <li><strong>Validação dinâmica do formulário</strong>: validações em tempo real por campo (email, telefone, nome, usuário, senha, confirmação de senha, idade mínima e checkboxes obrigatórios).</li>
+    <li><strong>Força da senha</strong>: cálculo de força com feedback visual e texto.</li>
+    <li><strong>Mostrar/ocultar senha</strong>: alternância do tipo do input e alteração do rótulo acessível.</li>
+    <li><strong>Auto-format telefone</strong>: máscara enquanto digita.</li>
+    <li><strong>Verificação de disponibilidade de usuário (simulada)</strong>: debounce + feedback visual (sucesso/erro).</li>
+    <li><strong>Gerenciamento de erros acessíveis</strong>: mensagens com roles/aria, foco no primeiro erro, live region para leitores de tela.</li>
+    <li><strong>Interações gerais do site</strong>: smooth scrolling, busca (prompt), filtragem de cards, ações "Ver Mais" e "Comprar" nos cards, navegação por teclado entre cards.</li>
+  </ul>
+
+  <h2>4. Trechos importantes do código JavaScript</h2>
+  <p>Abaixo estão os trechos principais extraídos dos arquivos <code>js/form-validation.js</code> e <code>js/main.js</code>. São as funções centrais de validação e interatividade.</p>
+
+  <h3>a) Inicialização da validação e envio (form-validation.js)</h3>
+  <pre>document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('registration-form');
+  if (form) {
+    initFormValidation();
+    initPasswordStrength();
+    initPasswordToggle();
+    initFormEnhancements();
+  }
+});
+
+// Submissão simulada (apresenta sucesso e esconde o formulário)
+function submitForm() {
+  const form = document.getElementById('registration-form');
+  const successMessage = document.getElementById('success-message');
+  submitBtn.disabled = true;
+  setTimeout(() => {
+    form.style.display = 'none';
+    successMessage.style.display = 'block';
+    successMessage.focus();
+  }, 2000);
+}</pre>
+
+  <h3>b) Cálculo da força da senha (form-validation.js)</h3>
+  <pre>function getPasswordStrength(password) {
+  let score = 0;
+  const checks = {
+    length: password.length >= 8,
+    lowercase: /[a-z]/.test(password),
+    uppercase: /[A-Z]/.test(password),
+    numbers: /\d/.test(password),
+    symbols: /[^A-Za-z0-9]/.test(password)
+  };
+  Object.values(checks).forEach(check =&gt; { if (check) score++; });
+  // retorna {score, level, text}
+}</pre>
+
+  <h3>c) Toggle de visibilidade de senha (form-validation.js)</h3>
+  <pre>toggleBtn.addEventListener('click', function() {
+  field.type = (field.type === 'password') ? 'text' : 'password';
+  this.setAttribute('aria-label', isPassword ? 'Ocultar senha' : 'Mostrar senha');
+});</pre>
+
+  <h3>d) Smooth scrolling e busca (main.js)</h3>
+  <pre>function initSmoothScrolling() {
+  const navLinks = document.querySelectorAll('a[href^="#"]');
+  navLinks.forEach(link =&gt; link.addEventListener('click', function(e){ e.preventDefault(); document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'}); }));
+}
+
+function showSearchModal(){ const term = prompt('Buscar jogos:'); if(term) searchGames(term); }</pre>
+
+  <h2>5. Justificativa técnica</h2>
+  <p>As interações foram implementadas com JavaScript puro (vanilla JS) para manter leveza e maior controle de acessibilidade. Bootstrap foi usado para layout e componentes visuais; o JS adiciona comportamento sem alterar a semântica do HTML, mantendo ARIA e foco adequados.</p>
+
+  <h2>6. Alinhamento com identidade visual e Bootstrap</h2>
+  <ul>
+    <li>Bootstrap fornece grid, botões e utilitários responsivos — o CSS customizado aplica paleta (gradientes, cores de destaque) apenas em elementos chave (como <code>.cta-primary</code>), respeitando o tema.</li>
+    <li>Componentes interativos usam classes Bootstrap (<code>.btn</code>, <code>.form-control</code>, <code>.card</code>) para consistência visual e responsividade.</li>
+    <li>Acessibilidade: foco, live regions e labels foram mantidos para compatibilidade com leitores de tela.</li>
+  </ul>
+
+  <h2>7. Como gerar o PDF (passos rápidos)</h2>
+  <ol>
+    <li>Abra este arquivo no navegador: <code>docs/iara-interactivity-report.html</code> (por ex. arraste ao Chrome/Edge/Firefox).</li>
+    <li>Substitua as imagens em <code>images/screenshots/</code> se quiser evidências visuais reais; caso contrário, o relatório gerará sem imagens.</li>
+    <li>File → Print → Escolha <strong>Salvar como PDF</strong> (A4 ou Letter), ajuste margens e pressione Salvar.</li>
+  </ol>
+
+  <h2>8. Próximos passos que eu posso executar</h2>
+  <ul>
+    <li>Inserir automaticamente as capturas de tela se você colocá-las em <code>images/screenshots/</code> (eu faço a inclusão no HTML).</li>
+    <li>Gerar PDF automaticamente e adicionar ao repositório (se você me permitir executar utilitário local para gerar PDF).</li>
+    <li>Adicionar mais evidências: gravação curta em GIF ou vídeo demo (instruções para gravação).</li>
+  </ul>
+
+  <h2>9. Observações finais</h2>
+  <p>O projeto já contém interatividade robusta nas páginas principais (formulário de cadastro, lista de jogos). Se quiser que eu incorpore as imagens e já gere o PDF final dentro do repositório, adicione as capturas em <code>images/screenshots/</code> — eu as incorporo e atualizo o arquivo.</p>
+
+  <p class="meta">Relatório gerado automaticamente — se aprovar, eu insiro screenshots e marco a tarefa como concluída.</p>
+  <script>
+    // Replace missing images with inline SVG placeholders
+    document.addEventListener('DOMContentLoaded', function(){
+      const imgs = document.querySelectorAll('img.screenshot');
+      imgs.forEach(img => {
+        img.addEventListener('error', function() {
+          const name = this.dataset.filename || 'screenshot.png';
+          const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='900' height='300'>`+
+            `<rect width='100%' height='100%' fill='%23f3f4f6'/>`+
+            `<text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%236b7280'>Placeholder: ${name}</text>`+
+          `</svg>`;
+          this.outerHTML = svg;
+        });
+
+        // If image already failed to load earlier
+        if (img.complete && img.naturalWidth === 0) {
+          img.dispatchEvent(new Event('error'));
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -108,94 +108,7 @@ body {
     z-index: 100;
 }
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-lg);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-}
-
-.logo a {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-
-.logo-image {
-    height: 50px;
-    width: auto;
-    max-width: 200px;
-    object-fit: contain;
-    transition: opacity var(--transition-normal);
-}
-
-.logo-image:hover {
-    opacity: 0.9;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: var(--spacing-lg);
-}
-
-.nav-menu a {
-    color: var(--text-primary);
-    text-decoration: none;
-    font-weight: 500;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: 8px;
-    transition: all var(--transition-normal);
-    position: relative;
-}
-
-.nav-menu a:hover,
-.nav-menu a:focus {
-    background: rgba(99, 102, 241, 0.1);
-    color: var(--accent-purple);
-    outline: none;
-}
-
-.nav-menu a[aria-current="page"] {
-    color: var(--accent-purple);
-    background: rgba(99, 102, 241, 0.1);
-}
-
-.nav-actions {
-    display: flex;
-    gap: var(--spacing-sm);
-}
-
-.search-btn,
-.user-btn {
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    padding: var(--spacing-xs);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all var(--transition-normal);
-    font-size: var(--font-size-lg);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-}
-
-.search-btn:hover,
-.search-btn:focus,
-.user-btn:hover,
-.user-btn:focus {
-    background: rgba(99, 102, 241, 0.2);
-    border-color: var(--border-hover);
-    outline: none;
-    transform: translateY(-2px);
-}
+/* Navbar: relying on Bootstrap's navbar and utility classes; custom logo sizing kept elsewhere */
 
 /* Hero Section */
 .hero {
@@ -416,42 +329,7 @@ body {
     gap: var(--spacing-sm);
 }
 
-.btn-primary,
-.btn-secondary {
-    flex: 1;
-    padding: 0.8rem var(--spacing-md);
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all var(--transition-normal);
-    border: none;
-    font-size: var(--font-size-sm);
-}
-
-.btn-primary {
-    background: var(--primary-gradient);
-    color: white;
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-    outline: none;
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--accent-purple);
-    border: 1px solid var(--accent-purple);
-}
-
-.btn-secondary:hover,
-.btn-secondary:focus {
-    background: rgba(139, 92, 246, 0.1);
-    transform: translateY(-2px);
-    outline: none;
-}
+/* Button visual styles: use Bootstrap's .btn, .btn-primary and .btn-secondary; custom CTA classes remain (.cta-primary/.cta-secondary) */
 
 /* About Section */
 .about-content {
