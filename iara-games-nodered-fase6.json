@@ -1,0 +1,592 @@
+[
+  {
+    "id": "iara-ui-cfg",
+    "type": "ui_base",
+    "theme": {
+      "name": "theme-custom",
+      "customTheme": {
+        "name": "Iara Games Dark",
+        "default": "#6366f1",
+        "baseColor": "#6366f1",
+        "baseFont": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+      },
+      "themeState": {
+        "base-color": { "value": "#6366f1", "edited": true },
+        "page-titlebar-backgroundColor": { "value": "#0f0f23", "edited": true },
+        "page-backgroundColor": { "value": "#0f0f23", "edited": true },
+        "page-sidebar-backgroundColor": { "value": "#1a1a2e", "edited": true },
+        "group-textColor": { "value": "#cbd5e1", "edited": true },
+        "group-borderColor": { "value": "#6366f1", "edited": true },
+        "group-backgroundColor": { "value": "#0f0f23", "edited": true },
+        "widget-textColor": { "value": "#ffffff", "edited": true },
+        "widget-backgroundColor": { "value": "#0f0f23", "edited": true },
+        "widget-borderColor": { "value": "#6366f1", "edited": true },
+        "base-font": {
+          "value": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        }
+      },
+      "angularTheme": {
+        "primary": "indigo",
+        "accents": "purple",
+        "warn": "red",
+        "background": "grey",
+        "palette": "light"
+      }
+    },
+    "site": {
+      "name": "Iara Games Dashboard",
+      "hideToolbar": "false",
+      "allowSwipe": "false",
+      "lockMenu": "false",
+      "allowTempTheme": "true",
+      "dateFormat": "DD/MM/YYYY",
+      "sizes": {
+        "sx": 48,
+        "sy": 48,
+        "gx": 6,
+        "gy": 6,
+        "cx": 6,
+        "cy": 6,
+        "px": 0,
+        "py": 0
+      }
+    }
+  },
+
+  {
+    "id": "tab-main",
+    "type": "ui_tab",
+    "name": "🎮 Iara Games",
+    "icon": "gamepad",
+    "order": 1,
+    "disp": true
+  },
+
+  {
+    "id": "grp-header",
+    "type": "ui_group",
+    "name": "Iara Games",
+    "tab": "tab-main",
+    "order": 1,
+    "disp": false,
+    "width": "12",
+    "collapse": false
+  },
+  {
+    "id": "grp-stats",
+    "type": "ui_group",
+    "name": "📊 Estatísticas da Plataforma",
+    "tab": "tab-main",
+    "order": 2,
+    "disp": true,
+    "width": "12",
+    "collapse": false
+  },
+  {
+    "id": "grp-games",
+    "type": "ui_group",
+    "name": "🔍 Busca de Jogos por Gênero",
+    "tab": "tab-main",
+    "order": 3,
+    "disp": true,
+    "width": "12",
+    "collapse": false
+  },
+  {
+    "id": "grp-users",
+    "type": "ui_group",
+    "name": "👤 Consulta de Perfil de Usuário",
+    "tab": "tab-main",
+    "order": 4,
+    "disp": true,
+    "width": "12",
+    "collapse": false
+  },
+  {
+    "id": "grp-forum",
+    "type": "ui_group",
+    "name": "💬 Tópicos do Fórum",
+    "tab": "tab-main",
+    "order": 5,
+    "disp": true,
+    "width": "12",
+    "collapse": false
+  },
+
+  {
+    "id": "uit-header",
+    "type": "ui_template",
+    "group": "grp-header",
+    "name": "Banner Iara Games",
+    "order": 1,
+    "width": "12",
+    "height": "5",
+    "format": "<style>\n  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');\n  md-card, .nr-dashboard-template, md-content, .nr-widget-header, .nr-dashboard-background { background: #0f0f23 !important; }\n  .iara-banner { font-family: Inter, sans-serif; text-align: center; padding: 28px 24px; background: #0f0f23; border-radius: 14px; border: 3px solid #8b5cf6; }\n  .iara-title { color: #8b5cf6; margin: 0; font-size: 28px; letter-spacing: 4px; font-weight: 800; text-transform: uppercase; }\n  .iara-sub { color: #cbd5e1; margin: 8px 0 4px; font-size: 13px; font-weight: 400; }\n  .iara-phase { color: #6366f1; margin: 0; font-size: 11px; letter-spacing: 2px; font-weight: 600; text-transform: uppercase; }\n  .iara-badges { display: flex; justify-content: center; gap: 10px; margin-top: 16px; flex-wrap: wrap; }\n  .badge { font-size: 11px; padding: 5px 12px; border-radius: 20px; font-weight: 600; }\n  .badge-green { color: #10b981; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); }\n  .badge-purple { color: #a78bfa; background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.3); }\n  .badge-pink { color: #ec4899; background: rgba(236,72,153,0.12); border: 1px solid rgba(236,72,153,0.3); }\n  .iara-games-list { display: flex; justify-content: center; gap: 14px; margin-top: 14px; flex-wrap: wrap; }\n  .game-tag { color: #64748b; font-size: 10px; padding: 3px 8px; border-radius: 4px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); }\n</style>\n<div class=\"iara-banner\">\n  <h1 class=\"iara-title\">🎮 Iara Games</h1>\n  <p class=\"iara-sub\">Plataforma de Jogos Indies Brasileiros</p>\n  <p class=\"iara-phase\">Painel Interativo · Fase 5 &amp; 6 · URLs Dinâmicas · Consumo de APIs</p>\n  <div class=\"iara-badges\">\n    <span class=\"badge badge-green\">✅ FreeToGame API</span>\n    <span class=\"badge badge-green\">✅ JSONPlaceholder API</span>\n    <span class=\"badge badge-purple\">⚡ HTTP Request Node</span>\n    <span class=\"badge badge-pink\">🔗 Template + Change</span>\n  </div>\n  <div class=\"iara-games-list\">\n    <span class=\"game-tag\">Chroma Squad</span>\n    <span class=\"game-tag\">Dandara</span>\n    <span class=\"game-tag\">Blazing Chrome</span>\n    <span class=\"game-tag\">Horizon Chase Turbo</span>\n    <span class=\"game-tag\">Dodgeball Academia</span>\n    <span class=\"game-tag\">Kaze and the Wild Masks</span>\n  </div>\n</div>",
+    "storeOutMessages": false,
+    "fwdInMessages": false,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "className": "",
+    "x": 300,
+    "y": 80,
+    "wires": [[]]
+  },
+
+  {
+    "id": "uit-stats",
+    "type": "ui_template",
+    "group": "grp-stats",
+    "name": "Stats Plataforma",
+    "order": 1,
+    "width": "12",
+    "height": "4",
+    "format": "<style>\n  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 8px; font-family: Inter, sans-serif; }\n  .stat-card { background: #0f0f23; border: 3px solid #8b5cf6; border-radius: 10px; padding: 18px; text-align: center; transition: border-color 0.2s; }\n  .stat-card:hover { border-color: #a78bfa; }\n  .stat-icon { font-size: 26px; }\n  .stat-value { color: #8b5cf6; font-size: 26px; font-weight: 800; margin: 6px 0 2px; }\n  .stat-label { color: #64748b; font-size: 11px; font-weight: 500; letter-spacing: 0.5px; }\n  @media (max-width: 640px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }\n</style>\n<div class=\"stats-grid\">\n  <div class=\"stat-card\"><div class=\"stat-icon\">🎮</div><div class=\"stat-value\">48</div><div class=\"stat-label\">Jogos Cadastrados</div></div>\n  <div class=\"stat-card\"><div class=\"stat-icon\">👥</div><div class=\"stat-value\">1.247</div><div class=\"stat-label\">Usuários Ativos</div></div>\n  <div class=\"stat-card\"><div class=\"stat-icon\">🏢</div><div class=\"stat-value\">12</div><div class=\"stat-label\">Estúdios Parceiros</div></div>\n  <div class=\"stat-card\"><div class=\"stat-icon\">⭐</div><div class=\"stat-value\">3.891</div><div class=\"stat-label\">Avaliações</div></div>\n</div>",
+    "storeOutMessages": false,
+    "fwdInMessages": false,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "className": "",
+    "x": 300,
+    "y": 160,
+    "wires": [[]]
+  },
+
+  {
+    "id": "uii-genre",
+    "type": "ui_text_input",
+    "group": "grp-games",
+    "name": "Campo Gênero",
+    "label": "🔍 Gênero do jogo",
+    "tooltip": "Gêneros disponíveis: action, rpg, shooter, mmorpg, strategy, moba, racing, sports, sandbox, survival, card, battle-royale, anime, fantasy",
+    "order": 1,
+    "width": "8",
+    "height": "1",
+    "passthru": true,
+    "mode": "text",
+    "delay": 0,
+    "type": "ui_text_input",
+    "sendOnBlur": false,
+    "x": 120,
+    "y": 300,
+    "wires": [["tpl-game-url"]]
+  },
+
+  {
+    "id": "tpl-game-url",
+    "type": "template",
+    "name": "Montar URL Jogos",
+    "field": "payload",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "https://www.freetogame.com/api/games?category={{payload}}",
+    "output": "str",
+    "x": 330,
+    "y": 300,
+    "wires": [["chg-game-url"]]
+  },
+
+  {
+    "id": "chg-game-url",
+    "type": "change",
+    "name": "Definir msg.url",
+    "rules": [
+      {
+        "t": "set",
+        "p": "url",
+        "pt": "msg",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 530,
+    "y": 300,
+    "wires": [["uixt-game-url", "http-games"]]
+  },
+
+  {
+    "id": "uixt-game-url",
+    "type": "ui_text",
+    "group": "grp-games",
+    "order": 2,
+    "width": "12",
+    "height": "1",
+    "name": "URL Gerada — Jogos",
+    "label": "🔗 URL dinâmica gerada:",
+    "format": "{{msg.payload}}",
+    "layout": "row-spread",
+    "className": "",
+    "x": 750,
+    "y": 260,
+    "wires": []
+  },
+
+  {
+    "id": "http-games",
+    "type": "http request",
+    "name": "GET FreeToGame API",
+    "method": "GET",
+    "ret": "obj",
+    "paytoqs": "ignore",
+    "url": "{{{url}}}",
+    "tls": "",
+    "persist": false,
+    "proxy": "",
+    "authType": "",
+    "x": 750,
+    "y": 340,
+    "wires": [["fn-games"]]
+  },
+
+  {
+    "id": "fn-games",
+    "type": "function",
+    "name": "Formatar Jogos",
+    "func": "try {\n    if (msg.statusCode && msg.statusCode !== 200) {\n        msg.payload = { error: 'A API retornou erro (status ' + msg.statusCode + '). Verifique o gênero informado.' };\n        return msg;\n    }\n    var games = msg.payload;\n    if (!Array.isArray(games)) {\n        msg.payload = { error: 'Gênero não encontrado. Tente: action, rpg, shooter, mmorpg, strategy, moba, racing, sports, sandbox, survival, card, battle-royale, anime, fantasy' };\n        return msg;\n    }\n    var shown = games.slice(0, 12);\n    msg.payload = {\n        games: shown.map(function(g) {\n            return {\n                title: g.title,\n                thumbnail: g.thumbnail,\n                genre: g.genre,\n                platform: g.platform,\n                developer: g.developer,\n                release_date: g.release_date,\n                game_url: g.game_url\n            };\n        }),\n        total: games.length,\n        shown: shown.length\n    };\n    return msg;\n} catch(e) {\n    msg.payload = { error: 'Erro ao processar resposta da API: ' + e.message };\n    return msg;\n}",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 960,
+    "y": 340,
+    "wires": [["uit-games"]]
+  },
+
+  {
+    "id": "uit-games",
+    "type": "ui_template",
+    "group": "grp-games",
+    "name": "Resultado Jogos",
+    "order": 3,
+    "width": "12",
+    "height": "12",
+    "format": "<style>\n  .games-wrap { font-family: Inter, sans-serif; padding: 8px; }\n  .games-hint { color: #64748b; padding: 24px; text-align: center; font-size: 13px; border: 1px dashed rgba(99,102,241,0.2); border-radius: 8px; }\n  .games-count { color: #6366f1; font-size: 12px; margin: 0 0 12px; font-weight: 600; }\n  .games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }\n  .game-card { background: #0f0f23; border: 3px solid #8b5cf6; border-radius: 10px; overflow: hidden; transition: border-color 0.2s, transform 0.2s; }\n  .game-card:hover { border-color: #a78bfa; transform: translateY(-2px); }\n  .game-thumb { width: 100%; height: 110px; object-fit: cover; display: block; }\n  .game-info { padding: 10px; }\n  .game-title { color: #a78bfa; font-size: 13px; font-weight: 700; margin: 0 0 5px; line-height: 1.3; }\n  .game-genre { color: #cbd5e1; font-size: 11px; margin: 2px 0; }\n  .game-platform { color: #6366f1; font-size: 10px; margin: 2px 0; }\n  .game-dev { color: #64748b; font-size: 10px; margin: 4px 0 0; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 4px; }\n  .games-error { color: #f87171; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2); border-radius: 8px; padding: 16px; font-size: 13px; }\n</style>\n<div class=\"games-wrap\">\n  <div ng-if=\"!msg.payload\" class=\"games-hint\">\n    Digite um gênero acima e pressione Enter para buscar jogos na FreeToGame API.<br>\n    <small style=\"color:#475569;\">Exemplos: action · rpg · shooter · mmorpg · strategy · moba · racing · sports</small>\n  </div>\n  <div ng-if=\"msg.payload\">\n    <div ng-if=\"msg.payload.error\" class=\"games-error\">⚠️ {{msg.payload.error}}</div>\n    <div ng-if=\"!msg.payload.error\">\n      <p class=\"games-count\">🎮 {{msg.payload.total}} jogos encontrados · exibindo {{msg.payload.shown}}</p>\n      <div class=\"games-grid\">\n        <div class=\"game-card\" ng-repeat=\"game in msg.payload.games\">\n          <img class=\"game-thumb\" ng-src=\"{{game.thumbnail}}\" alt=\"{{game.title}}\">\n          <div class=\"game-info\">\n            <p class=\"game-title\">{{game.title}}</p>\n            <p class=\"game-genre\">🎯 {{game.genre}}</p>\n            <p class=\"game-platform\">🖥️ {{game.platform}}</p>\n            <p class=\"game-dev\">{{game.developer}}</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "className": "",
+    "x": 1180,
+    "y": 340,
+    "wires": [[]]
+  },
+
+  {
+    "id": "uii-uid",
+    "type": "ui_text_input",
+    "group": "grp-users",
+    "name": "Campo ID de Usuário",
+    "label": "👤 ID do usuário (1 a 10)",
+    "tooltip": "Digite um número de 1 a 10 para buscar o perfil do usuário simulado via JSONPlaceholder API",
+    "order": 1,
+    "width": "4",
+    "height": "1",
+    "passthru": true,
+    "mode": "number",
+    "delay": 0,
+    "sendOnBlur": false,
+    "x": 120,
+    "y": 480,
+    "wires": [["tpl-user-url"]]
+  },
+
+  {
+    "id": "tpl-user-url",
+    "type": "template",
+    "name": "Montar URL Usuário",
+    "field": "payload",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "https://jsonplaceholder.typicode.com/users/{{payload}}",
+    "output": "str",
+    "x": 330,
+    "y": 480,
+    "wires": [["chg-user-url"]]
+  },
+
+  {
+    "id": "chg-user-url",
+    "type": "change",
+    "name": "Definir msg.url",
+    "rules": [
+      {
+        "t": "set",
+        "p": "url",
+        "pt": "msg",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 530,
+    "y": 480,
+    "wires": [["uixt-user-url", "http-user"]]
+  },
+
+  {
+    "id": "uixt-user-url",
+    "type": "ui_text",
+    "group": "grp-users",
+    "order": 2,
+    "width": "12",
+    "height": "1",
+    "name": "URL Gerada — Usuário",
+    "label": "🔗 URL dinâmica gerada:",
+    "format": "{{msg.payload}}",
+    "layout": "row-spread",
+    "className": "",
+    "x": 750,
+    "y": 440,
+    "wires": []
+  },
+
+  {
+    "id": "http-user",
+    "type": "http request",
+    "name": "GET JSONPlaceholder Users",
+    "method": "GET",
+    "ret": "obj",
+    "paytoqs": "ignore",
+    "url": "{{{url}}}",
+    "tls": "",
+    "persist": false,
+    "proxy": "",
+    "authType": "",
+    "x": 760,
+    "y": 520,
+    "wires": [["fn-user"]]
+  },
+
+  {
+    "id": "fn-user",
+    "type": "function",
+    "name": "Formatar Usuário",
+    "func": "try {\n    if (msg.statusCode && msg.statusCode !== 200) {\n        msg.payload = { error: 'Usuário não encontrado. Use IDs de 1 a 10.' };\n        return msg;\n    }\n    var user = msg.payload;\n    if (!user || !user.id) {\n        msg.payload = { error: 'Usuário não encontrado. Digite um ID de 1 a 10.' };\n        return msg;\n    }\n    msg.payload = {\n        id: user.id,\n        name: user.name,\n        username: user.username,\n        email: user.email,\n        phone: user.phone,\n        website: user.website,\n        address: {\n            street: user.address.street,\n            city: user.address.city,\n            zipcode: user.address.zipcode\n        },\n        company: {\n            name: user.company.name,\n            catchPhrase: user.company.catchPhrase\n        }\n    };\n    return msg;\n} catch(e) {\n    msg.payload = { error: 'Erro ao processar resposta: ' + e.message };\n    return msg;\n}",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 970,
+    "y": 520,
+    "wires": [["uit-user"]]
+  },
+
+  {
+    "id": "uit-user",
+    "type": "ui_template",
+    "group": "grp-users",
+    "name": "Resultado Usuário",
+    "order": 3,
+    "width": "12",
+    "height": "8",
+    "format": "<style>\n  .user-wrap { font-family: Inter, sans-serif; padding: 8px; }\n  .user-hint { color: #64748b; padding: 24px; text-align: center; font-size: 13px; border: 1px dashed rgba(99,102,241,0.2); border-radius: 8px; }\n  .user-card { background: #0f0f23; border: 3px solid #8b5cf6; border-radius: 12px; padding: 24px; }\n  .user-avatar { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #8b5cf6); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 14px; }\n  .user-name { color: #a78bfa; font-size: 20px; font-weight: 700; margin: 0 0 4px; }\n  .user-username { color: #6366f1; font-size: 13px; margin: 0 0 16px; }\n  .user-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }\n  .user-field { background: #0f0f23; border: 3px solid #8b5cf6; border-radius: 6px; padding: 10px; }\n  .field-label { color: #64748b; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px; }\n  .field-value { color: #cbd5e1; font-size: 13px; margin: 0; word-break: break-all; }\n  .user-company { margin-top: 14px; background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2); border-radius: 8px; padding: 12px; }\n  .company-name { color: #8b5cf6; font-size: 14px; font-weight: 600; margin: 0 0 4px; }\n  .company-phrase { color: #64748b; font-size: 11px; font-style: italic; margin: 0; }\n  .user-error { color: #f87171; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2); border-radius: 8px; padding: 16px; font-size: 13px; }\n  @media (max-width: 500px) { .user-fields { grid-template-columns: 1fr; } }\n</style>\n<div class=\"user-wrap\">\n  <div ng-if=\"!msg.payload\" class=\"user-hint\">\n    Digite um ID de usuário (1 a 10) e pressione Enter para consultar o perfil.<br>\n    <small style=\"color:#475569;\">Simulação da tabela <strong style='color:#6366f1'>usuarios</strong> do RDS Iara Games</small>\n  </div>\n  <div ng-if=\"msg.payload\">\n    <div ng-if=\"msg.payload.error\" class=\"user-error\">⚠️ {{msg.payload.error}}</div>\n    <div ng-if=\"!msg.payload.error\" class=\"user-card\">\n      <div class=\"user-avatar\">👤</div>\n      <h2 class=\"user-name\">{{msg.payload.name}}</h2>\n      <p class=\"user-username\">@{{msg.payload.username}} · ID #{{msg.payload.id}}</p>\n      <div class=\"user-fields\">\n        <div class=\"user-field\"><p class=\"field-label\">📧 Email</p><p class=\"field-value\">{{msg.payload.email}}</p></div>\n        <div class=\"user-field\"><p class=\"field-label\">📱 Telefone</p><p class=\"field-value\">{{msg.payload.phone}}</p></div>\n        <div class=\"user-field\"><p class=\"field-label\">🌐 Website</p><p class=\"field-value\">{{msg.payload.website}}</p></div>\n        <div class=\"user-field\"><p class=\"field-label\">📍 Cidade</p><p class=\"field-value\">{{msg.payload.address.city}}</p></div>\n      </div>\n      <div class=\"user-company\">\n        <p class=\"company-name\">🏢 {{msg.payload.company.name}}</p>\n        <p class=\"company-phrase\">\"{{msg.payload.company.catchPhrase}}\"</p>\n      </div>\n    </div>\n  </div>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "className": "",
+    "x": 1180,
+    "y": 520,
+    "wires": [[]]
+  },
+
+  {
+    "id": "uii-fuid",
+    "type": "ui_text_input",
+    "group": "grp-forum",
+    "name": "Campo ID Usuário Fórum",
+    "label": "💬 ID do usuário para buscar tópicos (1 a 10)",
+    "tooltip": "Digite o ID de um usuário para listar seus tópicos no fórum via JSONPlaceholder API",
+    "order": 1,
+    "width": "4",
+    "height": "1",
+    "passthru": true,
+    "mode": "number",
+    "delay": 0,
+    "sendOnBlur": false,
+    "x": 120,
+    "y": 660,
+    "wires": [["tpl-forum-url"]]
+  },
+
+  {
+    "id": "tpl-forum-url",
+    "type": "template",
+    "name": "Montar URL Fórum",
+    "field": "payload",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "https://jsonplaceholder.typicode.com/posts?userId={{payload}}",
+    "output": "str",
+    "x": 330,
+    "y": 660,
+    "wires": [["chg-forum-url"]]
+  },
+
+  {
+    "id": "chg-forum-url",
+    "type": "change",
+    "name": "Definir msg.url",
+    "rules": [
+      {
+        "t": "set",
+        "p": "url",
+        "pt": "msg",
+        "to": "payload",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 530,
+    "y": 660,
+    "wires": [["uixt-forum-url", "http-forum"]]
+  },
+
+  {
+    "id": "uixt-forum-url",
+    "type": "ui_text",
+    "group": "grp-forum",
+    "order": 2,
+    "width": "12",
+    "height": "1",
+    "name": "URL Gerada — Fórum",
+    "label": "🔗 URL dinâmica gerada:",
+    "format": "{{msg.payload}}",
+    "layout": "row-spread",
+    "className": "",
+    "x": 750,
+    "y": 620,
+    "wires": []
+  },
+
+  {
+    "id": "http-forum",
+    "type": "http request",
+    "name": "GET JSONPlaceholder Posts",
+    "method": "GET",
+    "ret": "obj",
+    "paytoqs": "ignore",
+    "url": "{{{url}}}",
+    "tls": "",
+    "persist": false,
+    "proxy": "",
+    "authType": "",
+    "x": 760,
+    "y": 700,
+    "wires": [["fn-forum"]]
+  },
+
+  {
+    "id": "fn-forum",
+    "type": "function",
+    "name": "Formatar Tópicos Fórum",
+    "func": "try {\n    if (msg.statusCode && msg.statusCode !== 200) {\n        msg.payload = { error: 'Erro na API (status ' + msg.statusCode + '). Tente novamente.' };\n        return msg;\n    }\n    var posts = msg.payload;\n    if (!Array.isArray(posts) || posts.length === 0) {\n        msg.payload = { error: 'Nenhum tópico encontrado para este usuário. Use IDs de 1 a 10.' };\n        return msg;\n    }\n    msg.payload = {\n        posts: posts.map(function(p) {\n            return {\n                id: p.id,\n                title: p.title,\n                body: p.body\n            };\n        }),\n        total: posts.length\n    };\n    return msg;\n} catch(e) {\n    msg.payload = { error: 'Erro ao processar resposta: ' + e.message };\n    return msg;\n}",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 980,
+    "y": 700,
+    "wires": [["uit-forum"]]
+  },
+
+  {
+    "id": "uit-forum",
+    "type": "ui_template",
+    "group": "grp-forum",
+    "name": "Resultado Fórum",
+    "order": 3,
+    "width": "12",
+    "height": "12",
+    "format": "<style>\n  .forum-wrap { font-family: Inter, sans-serif; padding: 8px; }\n  .forum-hint { color: #64748b; padding: 24px; text-align: center; font-size: 13px; border: 1px dashed rgba(99,102,241,0.2); border-radius: 8px; }\n  .forum-count { color: #ec4899; font-size: 12px; margin: 0 0 12px; font-weight: 600; }\n  .forum-list { display: flex; flex-direction: column; gap: 10px; }\n  .forum-post { background: #0f0f23; border-left: 3px solid #8b5cf6; border-radius: 0 8px 8px 0; padding: 14px; transition: border-left-color 0.2s; }\n  .forum-post:hover { border-left-color: #a78bfa; }\n  .post-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }\n  .post-title { color: #a78bfa; font-size: 14px; font-weight: 600; margin: 0; text-transform: capitalize; flex: 1; line-height: 1.3; }\n  .post-id { color: #475569; font-size: 10px; font-weight: 600; background: rgba(99,102,241,0.1); padding: 2px 7px; border-radius: 4px; margin-left: 8px; white-space: nowrap; }\n  .post-body { color: #94a3b8; font-size: 12px; line-height: 1.6; margin: 0; }\n  .forum-error { color: #f87171; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2); border-radius: 8px; padding: 16px; font-size: 13px; }\n</style>\n<div class=\"forum-wrap\">\n  <div ng-if=\"!msg.payload\" class=\"forum-hint\">\n    Digite um ID de usuário (1 a 10) e pressione Enter para listar os tópicos do fórum.<br>\n    <small style=\"color:#475569;\">Simulação do módulo de fórum da plataforma Iara Games</small>\n  </div>\n  <div ng-if=\"msg.payload\">\n    <div ng-if=\"msg.payload.error\" class=\"forum-error\">⚠️ {{msg.payload.error}}</div>\n    <div ng-if=\"!msg.payload.error\">\n      <p class=\"forum-count\">💬 {{msg.payload.total}} tópicos encontrados para este usuário</p>\n      <div class=\"forum-list\">\n        <div class=\"forum-post\" ng-repeat=\"post in msg.payload.posts\">\n          <div class=\"post-header\">\n            <p class=\"post-title\">{{post.title}}</p>\n            <span class=\"post-id\">#{{post.id}}</span>\n          </div>\n          <p class=\"post-body\">{{post.body}}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>",
+    "storeOutMessages": true,
+    "fwdInMessages": true,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "className": "",
+    "x": 1200,
+    "y": 700,
+    "wires": [[]]
+  },
+
+  {
+    "id": "catch-http",
+    "type": "catch",
+    "name": "Capturar Erros HTTP",
+    "scope": ["http-games", "http-user", "http-forum"],
+    "uncaught": false,
+    "x": 750,
+    "y": 800,
+    "wires": [["fn-catch-error"]]
+  },
+
+  {
+    "id": "fn-catch-error",
+    "type": "function",
+    "name": "Tratar Erro de Rede",
+    "func": "node.error('Erro de rede: ' + msg.error.message);\nmsg.payload = { error: 'Falha na conexão com a API: ' + msg.error.message + '. Verifique sua conexão com a internet.' };\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 980,
+    "y": 800,
+    "wires": [["dbg-error"]]
+  },
+
+  {
+    "id": "dbg-error",
+    "type": "debug",
+    "name": "Debug Erros",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 1180,
+    "y": 800,
+    "wires": []
+  },
+
+  {
+    "id": "comment-fase5",
+    "type": "comment",
+    "name": "═══ FASE 5 — Painel Estático ═══",
+    "info": "Fase 5: Painel base da Iara Games com componentes estáticos.\n\n- Banner identitário da plataforma\n- Cards de estatísticas simuladas (dados da plataforma)\n- Estrutura visual com tema dark (roxo/índigo) consistente com o front-end\n\nOs dados de estatísticas são simulados para representar o estado atual da plataforma:\n- 48 jogos cadastrados\n- 1.247 usuários ativos\n- 12 estúdios parceiros\n- 3.891 avaliações",
+    "x": 200,
+    "y": 40,
+    "wires": []
+  },
+
+  {
+    "id": "comment-fase6",
+    "type": "comment",
+    "name": "═══ FASE 6 — URLs Dinâmicas e Consumo de APIs ═══",
+    "info": "Fase 6: Extensão do painel com URLs dinâmicas e consumo de APIs externas.\n\n## Fluxo de dados (igual para cada seção):\n1. ui_text_input → recebe entrada do usuário\n2. template node → monta a URL dinamicamente via mustache ({{payload}})\n3. change node → copia msg.payload para msg.url\n4. ui_text → exibe a URL gerada na tela (transparência para o usuário)\n5. http request → realiza GET usando {{{url}}} → chama a API real\n6. function node → filtra e formata os dados recebidos\n7. ui_template → exibe resultados com AngularJS + HTML/CSS\n\n## APIs utilizadas:\n- FreeToGame API (freetogame.com) — catálogo de jogos free-to-play, sem autenticação\n- JSONPlaceholder (jsonplaceholder.typicode.com) — simulação de usuários e posts de fórum\n\n## Justificativa das APIs:\n- FreeToGame: gratuita, sem necessidade de chave de API, retorna dados reais de jogos com\n  imagens, gêneros e plataformas — alinhada ao contexto de plataforma de jogos da Iara Games\n- JSONPlaceholder: padrão REST simulando o banco RDS da arquitetura proposta (tabelas\n  usuarios e forum), ideal para demonstração sem infraestrutura real",
+    "x": 300,
+    "y": 240,
+    "wires": []
+  }
+]
