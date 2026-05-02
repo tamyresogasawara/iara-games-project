@@ -1,0 +1,89 @@
+.iara-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(15, 15, 35, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.iara-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+}
+
+.iara-brand {
+  display: flex;
+  align-items: center;
+}
+
+.iara-logo {
+  height: 40px;
+  width: auto;
+}
+
+.iara-nav {
+  display: flex;
+  gap: var(--spacing-md);
+  flex: 1;
+  justify-content: center;
+}
+
+.iara-nav-link {
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.iara-nav-link:hover {
+  color: var(--text-primary);
+  background: var(--background-card);
+}
+
+.iara-nav-link.is-active {
+  color: var(--text-primary);
+  background: var(--primary-gradient);
+}
+
+.iara-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.iara-user-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 0.3rem 0.75rem;
+  background: var(--background-card);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.iara-user-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--background-tertiary);
+}
+
+@media (max-width: 720px) {
+  .iara-header-inner {
+    flex-wrap: wrap;
+  }
+  .iara-nav {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

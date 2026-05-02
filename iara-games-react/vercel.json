@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/freetogame/:path*", "destination": "https://www.freetogame.com/:path*" },
+    { "source": "/((?!freetogame).*)", "destination": "/index.html" }
+  ]
+}

@@ -1,0 +1,102 @@
+.login-shell {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--background-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-xl);
+  backdrop-filter: blur(12px);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.login-logo {
+  height: 56px;
+  margin: 0 auto var(--spacing-sm);
+}
+
+.login-header h1 {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+}
+
+.login-field {
+  display: block;
+  margin-bottom: var(--spacing-md);
+}
+
+.login-field span {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.35rem;
+}
+
+.login-field input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: rgba(15, 15, 35, 0.6);
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.login-field input:focus {
+  outline: none;
+  border-color: var(--border-hover);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+.login-submit {
+  width: 100%;
+  margin-top: var(--spacing-xs);
+}
+
+.login-hint {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-sm);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.login-hint strong {
+  display: block;
+  width: 100%;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.login-hint code {
+  background: rgba(99, 102, 241, 0.12);
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--text-primary);
+}
+
+.login-fill {
+  margin-left: auto;
+  padding: 0.4rem 0.9rem;
+  font-size: var(--font-size-sm);
+}
